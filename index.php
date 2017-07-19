@@ -7,3 +7,6 @@
  */
 
 require "functions.php";
+
+$ar = ["one", "two" , "three"];
+task1($ar, true);
