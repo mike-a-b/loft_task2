@@ -12,7 +12,7 @@ if (TASK1 === true) {
         $num_args = func_num_args();
         $str_array = [];
         if ($num_args > 2) {
-            die("Параметр 1й - массив строк, 2-й - логический");
+            die("Неверное кол-во параметров. Параметр 1й - массив строк, 2-й - логический");
         } else {
             $str_array = func_get_arg(0);
         }
@@ -36,13 +36,11 @@ if (TASK2 === true) {
     function task2($int_array, $operation)
     {
         $num_args = func_num_args();
-        $int_ar = [];
         $op = ['+', '-', '/', '*'];
 //    echo in_array($operation, $op);
         if ($num_args !== 2) {
-            echo "Неверное количество элементов! (допустимо 2, передаваемых в функцию(1 - массив чисел, 2й " .
-                "- арифметическая операция)";
-            die();
+            die("Неверное количество элементов! (допустимо 2, передаваемых в функцию(1 - массив чисел, 2й " .
+                "- арифметическая операция)");
         } elseif (gettype($int_array) != "array") {
             echo("Первый параметр доллжен быть массивом");
             foreach ($int_array as $item) {
@@ -62,5 +60,44 @@ if (TASK2 === true) {
                 echo '<br>Результат = ' . $result . '<br>';
             }
         }
+    }
+}
+
+if (TASK3 === true) {
+    function task3()
+    {
+        $args = func_get_args();
+        $op = ['+', '-', '/', '*'];
+        $operation = "";
+        $numbers = [];
+        if (count($args) <= 2) {
+            die("Неверное количество элементов! Первый элемент - арифметическая операция, второй и/или (последующие).
+            вещественные или целые числа.");
+        } elseif (!in_array($args[0], $op, true)) {
+            die("Некорректная арифметическая операция");
+        } else {
+            $operation = $args[0];
+            for ($i = 1; $i < count($args); $i++) {
+                if (!(gettype($args[$i]) == "integer" || gettype($args[$i]) == "double")) {
+                    die("3й и/или последующие аргументы функции должны быть вещественными или целыми числами!");
+                } else {
+                    $numbers[] = round($args[$i], 2);
+                }
+            }
+        }
+        //main action
+        $res = 'Результат = ';
+        $expression ='';
+        for ($i = 0; $i < count($numbers); $i++) {
+            if ($i == (count($numbers) - 1)) {
+                $expression .= "{$numbers[$i]}";
+            } else {
+                $expression .= "{$numbers[$i]} $operation ";
+            }
+        }
+        echo $res . $expression . ' = ';
+        $result = eval("return ($expression);");
+        echo $result;
+        return;
     }
 }
