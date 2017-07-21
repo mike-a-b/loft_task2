@@ -87,7 +87,7 @@ if (TASK3 === true) {
         }
         //main action
         $res = 'Результат = ';
-        $expression ='';
+        $expression = '';
         for ($i = 0; $i < count($numbers); $i++) {
             if ($i == (count($numbers) - 1)) {
                 $expression .= "{$numbers[$i]}";
@@ -99,5 +99,26 @@ if (TASK3 === true) {
         $result = eval("return ($expression);");
         echo round($result, 2);
         return;
+    }
+}
+
+if (TASK4 === true) {
+    function task4($int1, $int2)
+    {
+        if (!(func_num_args() === 2)) {
+            die("Допускается 2 аргумента - целых чисел.");
+        } elseif (!((gettype($int1) === "integer") && (gettype($int2) === "integer"))) {
+            die("Введенные аргументы не целые числа");
+        } else {
+            echo "<table style='border: 1px solid black; border-collapse: collapse;'>";
+            for ($i = 1; $i <= $int1; $i++) {
+                echo "<tr>";
+                for ($j = 1; $j <= $int2; $j++) {
+                    echo "<td style='border: 1px solid black;'>&nbsp". $i * $j . "&nbsp;</td>";
+                }
+                echo "</tr>";
+            }
+            echo "</table>";
+        }
     }
 }
