@@ -97,7 +97,7 @@ if (TASK3 === true) {
         }
         echo $res . $expression . ' = ';
         $result = eval("return ($expression);");
-        echo $result;
+        echo round($result, 2);
         return;
     }
 }
