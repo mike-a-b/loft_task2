@@ -13,6 +13,7 @@ define("TASK4", true);
 define("TASK5", true);
 //2nd webinar
 define("TASK6", true);
+define("TASK7", true);
 
 
 require "functions.php";
@@ -56,8 +57,10 @@ if ($result === true) {
 }*/
 
 echo "<h2>Задание № 6</h2>";
-/**
- * part 2 tasks
- */
+
 date_default_timezone_set('Europe/Moscow');
 task6();
+
+echo "<h2>Задание № 7</h2>";
+
+task7();

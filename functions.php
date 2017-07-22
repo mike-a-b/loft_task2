@@ -154,5 +154,23 @@ if (TASK6 === true)
         //24.02.2016 00:00:00
         $m_time = mktime(0, 0, 0, 2, 24, 2016);
         echo "Сгенерированное время в unixstamp: " . date('d.m.Y H:i:s', $m_time);
+        echo "</hr>";
     }
 }
+
+if (TASK7 === true)
+{
+    function task7()
+    {
+        echo $st = "Карл у Клары украл Кораллы<br>";
+        $st = str_replace('К', '', $st);
+        echo "$st<br>";
+        //дополнение задачи
+        $search =['Две', 'лимонада'];
+        $repl = ['Три', 'coca-cola'];
+        echo $st = "Две бутылки лимонада<br>";
+        $st = str_replace($search, $repl, $st);
+        echo "$st<br>";
+    }
+}
+
