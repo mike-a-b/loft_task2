@@ -122,3 +122,26 @@ if (TASK4 === true) {
         }
     }
 }
+
+if (TASK5 === true) {
+    function task5($polindrom)
+    {
+        echo $polindrom;
+        $array = [];
+        $polindrom = mb_strtolower($polindrom, 'UTF-8');
+        $polindrom = strip_tags($polindrom);
+        $polindrom = str_replace(" ", "", $polindrom);
+        $array = preg_split('//u', $polindrom, -1, PREG_SPLIT_NO_EMPTY);
+        $length = count($array); // get the size of array
+        $revert_st = "";
+        //main action
+        for ($i = $length; $i >= 0; $i--) {
+              $revert_st .= $array[$i];
+        }
+        if ($revert_st === $polindrom) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
