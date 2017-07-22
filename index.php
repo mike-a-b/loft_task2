@@ -10,6 +10,8 @@ define("TASK2", true);
 define("TASK3", true);
 define("TASK4", true);
 define("TASK5", true);
+//2nd webinar
+define("TASK6", true);
 
 
 require "functions.php";
@@ -27,7 +29,7 @@ task3('/', 4, 2.2, 3, 6.5, 10);*/
 //multipl... table echo
 task4(4, 6);*/
 
-echo "<h2>Задание № 5</h2>";
+/*echo "<h2>Задание № 5</h2>";
 //полиндром в качестве примера...
 $st_pol = "У скал плакса ласкал плаксу";
 //НЕ полиндром из него же...
@@ -50,4 +52,13 @@ if ($result === true) {
     }
     $result = "not_poliecho";
     $result();
+}*/
+
+echo "<h2>Задание № 6</h2>";
+/**
+ * part 2 tasks
+ */
+date_default_timezone_set('Europe/Moscow');
+function task6()
+{
 }

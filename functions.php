@@ -145,3 +145,11 @@ if (TASK5 === true) {
         }
     }
 }
+
+if (TASK6 === true)
+{
+    function task6()
+    {
+
+    }
+}
