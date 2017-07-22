@@ -150,6 +150,9 @@ if (TASK6 === true)
 {
     function task6()
     {
-
+        echo "Текущее время в UNIXSTAMP: " . date('d.m.Y H:i', time()) . '<br>';
+        //24.02.2016 00:00:00
+        $m_time = mktime(0, 0, 0, 2, 24, 2016);
+        echo "Сгенерированное время в unixstamp: " . date('d.m.Y H:i:s', $m_time);
     }
 }

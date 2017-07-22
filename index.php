@@ -5,6 +5,7 @@
  * Date: 19.07.17
  * Time: 4:47
  */
+//конфиг можно в одну константу с битовой маской через логическое сложение вкл/выл функционал
 define("TASK1", true);
 define("TASK2", true);
 define("TASK3", true);
@@ -59,6 +60,4 @@ echo "<h2>Задание № 6</h2>";
  * part 2 tasks
  */
 date_default_timezone_set('Europe/Moscow');
-function task6()
-{
-}
+task6();
