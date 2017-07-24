@@ -21,7 +21,18 @@ define("TASK10", true);
 require "functions.php";
 
 echo "<h2>Задание № 1</h2>";
-task1(["one", "two" , "three"], true);
+
+$receive_strs = [
+    "RX packets:950381 errors:0 dropped:0 overruns:0 frame:0. ",
+    'RX packets:300 errors:90 dropped:0 overruns:0 frame:0. ',
+    "anyone text message ",
+    "RX packets:100000 errors:5 dropped:5 overruns:0 frame:15. ",
+    "anyone text :) messsage with smile ",
+    "RX packets:950381 errors:0 dropped:0 overruns:0 frame:0. ",
+    "RX packets:300 errors:90 dropped:0 overruns:0 frame:0. "
+];
+
+task1($receive_strs, false);
 
 echo "<h2>Задание № 2</h2>";
 task2([1,8,3,4], '/');
@@ -80,6 +91,7 @@ $receive_strs = [
 
 task8($receive_strs);
 
+echo "<h2>Задание № 9</h2>";
 task9();
-
+echo "<h2>Задание № 10</h2>";
 task10();

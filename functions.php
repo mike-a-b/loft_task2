@@ -7,27 +7,28 @@
  */
 
 if (TASK1 === true) {
-    function task1()
+    function task1($strs, $op)
     {
+
         $num_args = func_num_args();
-        $str_array = [];
         if ($num_args > 2) {
             die("Неверное кол-во параметров. Параметр 1й - массив строк, 2-й - логический");
-        } else {
-            $str_array = func_get_arg(0);
-        }
-        if (!is_array($str_array)) {
+        } /*else {
+            $str_array = $strs;
+        }*/
+        if (!is_array($strs)) {
             die("1й параметр некорректен");
         }
-
-        if (func_get_arg(1) === true) {
-            $result = implode("", $str_array);
-            echo $result . "<br>";
-            return;
+        $result="";
+        if ($op === true) {
+            $result = implode("", $strs);
+            return "<p>$result </p>";
         } else {
-            foreach ($str_array as $str) {
-                echo "<p>$str</p>\r\n";
+            $result2 = "";
+            foreach ($strs as $str) {
+                $result2 .= $str."<br>";
             }
+            echo "<p> $result2</p>";
         }
     }
 }
@@ -37,7 +38,6 @@ if (TASK2 === true) {
     {
         $num_args = func_num_args();
         $op = ['+', '-', '/', '*'];
-//    echo in_array($operation, $op);
         if ($num_args !== 2) {
             die("Неверное количество элементов! (допустимо 2, передаваемых в функцию(1 - массив чисел, 2й " .
                 "- арифметическая операция)");
@@ -51,14 +51,21 @@ if (TASK2 === true) {
         ) {
             die("Некорректная арифметическая операция");
         } else {
-            foreach ($int_array as $value) {
-                $str = "Выполняем $operation c элементом массива  $value : $value " . $operation . " $value\n";
-                echo $str;
-                $val = "$value $operation $value";
-//                $result = eval("return $val;");
-                $result = eval("return ($value $operation $value);");
-                echo '<br>Результат = ' . $result . '<br>';
+            $str = "Выполняем $operation c элементами массива.<br>";
+            echo $str;
+            $str = "Результат = ";
+            $expression = '';
+            for ($i = 0; $i < count($int_array); $i++) {
+                if ($i == (count($int_array) - 1)) {
+                    $expression .= "{$int_array[$i]}";
+                } else {
+                    $expression .= "{$int_array[$i]} $operation";
+                }
             }
+            echo $str . $expression . " = ";
+            $result = eval("return ($expression);");
+            echo round($result, 2);
+            return;
         }
     }
 }
@@ -187,7 +194,6 @@ if (TASK8 === true) {
                 drawSmile();
                 die();
             } elseif (!empty($out['packets']) && $out['packets'][0] > 1000) {
-                echo "test";
                 die('Сеть есть');
             } else {
                 die('Сеть лежит');
