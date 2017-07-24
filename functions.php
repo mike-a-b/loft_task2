@@ -196,4 +196,16 @@ if (TASK8 === true) {
     }
 }
 
+if (TASK9 === true)
+{
+    function task9()
+    {
+        //
+        $f = fopen('./text.txt', "rt") or die('Ошибка при отрытии файла<br>');
+        while (!feof($f)) {
+            $line = fgets($f);
+            echo $line . '<br />';
+        }
+    }
+}
 

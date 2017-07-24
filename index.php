@@ -15,6 +15,7 @@ define("TASK5", true);
 define("TASK6", true);
 define("TASK7", true);
 define("TASK8", true);
+define("TASK9", true);
 
 require "functions.php";
 
@@ -65,7 +66,7 @@ task6();*/
 
 task7();*/
 
-echo "<h2>Задание № 8</h2>";
+/*echo "<h2>Задание № 8</h2>";
 $receive_strs = [
     "RX packets:950381 errors:0 dropped:0 overruns:0 frame:0. ",
     'RX packets:300 errors:90 dropped:0 overruns:0 frame:0. ',
@@ -76,4 +77,6 @@ $receive_strs = [
     "RX packets:300 errors:90 dropped:0 overruns:0 frame:0. "
 ];
 
-task8($receive_strs);
+task8($receive_strs);*/
+
+task9();
