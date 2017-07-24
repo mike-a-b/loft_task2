@@ -14,7 +14,7 @@ define("TASK5", true);
 //2nd webinar
 define("TASK6", true);
 define("TASK7", true);
-
+define("TASK8", true);
 
 require "functions.php";
 
@@ -56,11 +56,24 @@ if ($result === true) {
     $result();
 }*/
 
-echo "<h2>Задание № 6</h2>";
+/*echo "<h2>Задание № 6</h2>";
 
 date_default_timezone_set('Europe/Moscow');
-task6();
+task6();*/
 
-echo "<h2>Задание № 7</h2>";
+/*echo "<h2>Задание № 7</h2>";
 
-task7();
+task7();*/
+
+echo "<h2>Задание № 8</h2>";
+$receive_strs = [
+    "RX packets:950381 errors:0 dropped:0 overruns:0 frame:0. ",
+    'RX packets:300 errors:90 dropped:0 overruns:0 frame:0. ',
+    "anyone text message ",
+    "RX packets:100000 errors:5 dropped:5 overruns:0 frame:15. ",
+    "anyone text :) messsage with smile ",
+    "RX packets:950381 errors:0 dropped:0 overruns:0 frame:0. ",
+    "RX packets:300 errors:90 dropped:0 overruns:0 frame:0. "
+];
+
+task8($receive_strs);

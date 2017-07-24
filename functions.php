@@ -114,7 +114,7 @@ if (TASK4 === true) {
             for ($i = 1; $i <= $int1; $i++) {
                 echo "<tr>";
                 for ($j = 1; $j <= $int2; $j++) {
-                    echo "<td style='border: 1px solid black;'>&nbsp". $i * $j . "&nbsp;</td>";
+                    echo "<td style='border: 1px solid black;'>&nbsp" . $i * $j . "&nbsp;</td>";
                 }
                 echo "</tr>";
             }
@@ -136,7 +136,7 @@ if (TASK5 === true) {
         $revert_st = "";
         //main action
         for ($i = $length; $i >= 0; $i--) {
-              $revert_st .= $array[$i];
+            $revert_st .= $array[$i];
         }
         if ($revert_st === $polindrom) {
             return true;
@@ -146,8 +146,7 @@ if (TASK5 === true) {
     }
 }
 
-if (TASK6 === true)
-{
+if (TASK6 === true) {
     function task6()
     {
         echo "Текущее время в UNIXSTAMP: " . date('d.m.Y H:i', time()) . '<br>';
@@ -158,19 +157,42 @@ if (TASK6 === true)
     }
 }
 
-if (TASK7 === true)
-{
+if (TASK7 === true) {
     function task7()
     {
         echo $st = "Карл у Клары украл Кораллы<br>";
         $st = str_replace('К', '', $st);
         echo "$st<br>";
         //дополнение задачи
-        $search =['Две', 'лимонада'];
+        $search = ['Две', 'лимонада'];
         $repl = ['Три', 'coca-cola'];
         echo $st = "Две бутылки лимонада<br>";
         $st = str_replace($search, $repl, $st);
         echo "$st<br>";
+    }
+}
+
+if (TASK8 === true) {
+    function task8($strs)
+    {
+        function drawSmile()
+        {
+            echo "0(-_-)0";
+        }
+        foreach ($strs as $str) {
+            $pattern = '/(packets:(?<packets>[0-9]*))|(?<smile>\:\))/u';
+            preg_match_all($pattern, $str, $out, PREG_PATTERN_ORDER)
+            or die('Сеть лежит');
+            if (!empty($out['smile']) && $out['smile'][0] == ':)') {
+                drawSmile();
+                die();
+            } elseif (!empty($out['packets']) && $out['packets'][0] > 1000) {
+                echo "test";
+                die('Сеть есть');
+            } else {
+                die('Сеть лежит');
+            }
+        }
     }
 }
 
