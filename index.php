@@ -16,6 +16,7 @@ define("TASK6", true);
 define("TASK7", true);
 define("TASK8", true);
 define("TASK9", true);
+define("TASK10", true);
 
 require "functions.php";
 
@@ -79,4 +80,6 @@ $receive_strs = [
 
 task8($receive_strs);*/
 
-task9();
+//task9();
+
+task10();
